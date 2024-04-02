@@ -38,30 +38,30 @@
   </div>
 
 
-  <div class=" container card my-5 shadow-lg" id="budgetItemsCard" style="display: none;">
-    <h5 class="card-header my-3" id="addBudgetTitle">Featured</h5>
-    <div class="card-body">
+  <div class=" container my-5 shadow-lg p-3 rounded-3" id="budgetItemsCard" style="display: none;">
+    <h5 class="header my-3 fs-3 mb-3 text-center mb-5" id="addBudgetTitle">Featured </h5>
+    <div class="body">
       <div id="errorDiv2" class="bg-danger text-center text-light rounded-3 my-3 fs-3 animate__animated animate__headShake animate__infinite" style="display: none">Nothing Det</div>
-      <h5 class="card-title">Enter item Name</h5>
+      <h5 class="fs-4">Enter item Name</h5>
       <input type="text" class="form-control mb-3" placeholder="eg: Indomie" id="itemName">
-      <h5 class="card-title">Enter item Price</h5>
-      <input type="number" class="form-control mb-3" placeholder="eg: &#8358;500" id="itemAmount">
-      <h5 class="card-title">Enter item Quantity</h5>
-      <input type="number" class="form-control" placeholder="eg: 2" id="itemQty">
+      <h5 class="fs-4">Enter item Price</h5>
+      <input type="number" class="form-control mb-3" placeholder="eg: &#8358;500" id="itemAmount" minlength="1">
+      <h5 class="fs-4">Enter item Quantity</h5>
+      <input type="number" class="form-control" placeholder="eg: 2" id="itemQty" minlength="1">
       <button class="btn btn-success my-3" onclick="allocateBudget()">Add item</button>
-      <p class="card-text">"Don't save what is left after spending; spend what is left after saving." - Warren Buffett</p>
+      <p class="fs-5 text-center">"Don't save what is left after spending; spend what is left after saving." - Warren Buffett</p>
     </div>
   </div> 
 
 
-  <div class="card container my-3" id="dispCard" style="display: none;">
-    <div class="card-header">
-      Your Budgeted Items
-    </div>
-    <div class="card-body">
-      <blockquote class="blockquote mb-0">
-        <p id="itemsDisp"></p>
-      </blockquote>
+  <div class="container my-3 p-3 shadow-lg rounded-3" id="dispCard" style="display: none;">
+    <h3 class="fs-3 mb-3 text-center mb-3">
+      Your Budgeted Items <img src="img/t.png" alt="" class="col-3 col-md-1">
+    </h3>
+    <div class="fs-5">
+      <ul>
+        <div id="itemsDisp"></div>
+      </ul>
     </div>
   </div>
 

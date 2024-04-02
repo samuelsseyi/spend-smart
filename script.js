@@ -27,13 +27,17 @@ const allocateBudget = ()=> {
  let itemAmount = document.getElementById("itemAmount").value
  let itemQty = document.getElementById("itemQty").value
  let itemAmountQty = Math.round(`${itemAmount * itemQty}`)
+ let theCurrentTime = new Date().toLocaleTimeString()
 
  if (itemName === "" || itemQty === "" || itemAmount === ""){
   document.getElementById("errorDiv2").style.display = "block"
   errorDiv2.innerHTML = "Oops! Looks like you missed a required field."
  } else if ( itemAmountQty > budgetAmount){
   document.getElementById("errorDiv2").style.display = "block"
-  errorDiv2.innerHTML = "Uh-oh! Item cost exceeds budget. Please select a more affordable option."
+  errorDiv2.innerHTML = "Uh-oh! Item cost exceeds budget balance. Please select a more affordable option."
+ } else if (itemAmount <= 0 || itemQty <= 0){
+  document.getElementById("errorDiv2").style.display = "block"
+  errorDiv2.innerHTML = "Uh-oh! Seems item price or quantity is too small."
  } else {
   document.getElementById("errorDiv2").style.display = "none"
 
@@ -43,7 +47,7 @@ const allocateBudget = ()=> {
 
 
   document.getElementById("dispCard").style.display = "block"
-  document.getElementById("itemsDisp").innerHTML += `You Added ${itemName}: Price &#8358;${itemAmount} | Quantity ${itemQty} | Total Amount &#8358;${itemAmountQty} <br><br>`
+  document.getElementById("itemsDisp").innerHTML += `<li>You Added ${itemName}: Price &#8358;${itemAmount} | Quantity ${itemQty} | Total Amount &#8358;${itemAmountQty} | Time ${theCurrentTime} </li> <br>`
 
   document.getElementById("itemName").value = ""
   document.getElementById("itemAmount").value = ""
