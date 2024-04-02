@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spend Smart</title>
+  <link rel="icon" href="img/Spend Smart Lgo.png">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+<body>
+  <nav class="navbar ">
+    <div class="container-fluid ">
+      <a class="navbar-brand fs-1 text-center mx-auto p-2 rounded-3 text-light fw-bold shadow-lg" href="#" style="border: solid #ffff">
+        <img src="img/Spend Smart Lgo.png" alt="Logo"  class="d-inline-block align-text-bottom col-1">
+        SPEND SMART
+      </a>
+    </div>
+  </nav>
+  
+  
+  <div class=" my-auto mt-5 container text-center shadow-lg p-5" id="welcomeDisplay">
+    <p class="fs-1">Welcome To Spend Smart</p>
+    <p class="fs-5">Smart spending starts with YOU!</p>
+    <button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal"> Set Your Budget</button>
+    <div id="errorDiv" class="bg-danger text-light rounded-3 my-3 fs-3 animate__animated animate__headShake animate__infinite" style="display: none"></div>
+  </div>
+
+
+  
+  
+  
+  <div class=" my-auto mt-5 container text-center shadow-lg p-5" style="display: none;" id="secondaryWelcome">
+    <div class="fs-4 fw-bold text-outline my-3" id="userBudgetConfirm"></div>
+    <button class="btn btn-dark" onclick="firstAddBudgetBtn()">Allocate Funds</button>
+    <p class="fs-4 mt-5">"It's not your salary that makes you rich, it's your spending habits." - Charles A. Jaffe</p>
+  </div>
+
+
+  <div class=" container card my-5 shadow-lg" id="budgetItemsCard" style="display: none;">
+    <h5 class="card-header my-3" id="addBudgetTitle">Featured</h5>
+    <div class="card-body">
+      <div id="errorDiv2" class="bg-danger text-center text-light rounded-3 my-3 fs-3 animate__animated animate__headShake animate__infinite" style="display: none">Nothing Det</div>
+      <h5 class="card-title">Enter item Name</h5>
+      <input type="text" class="form-control mb-3" placeholder="eg: Indomie" id="itemName">
+      <h5 class="card-title">Enter item Price</h5>
+      <input type="number" class="form-control mb-3" placeholder="eg: &#8358;500" id="itemAmount">
+      <h5 class="card-title">Enter item Quantity</h5>
+      <input type="number" class="form-control" placeholder="eg: 2" id="itemQty">
+      <button class="btn btn-success my-3" onclick="allocateBudget()">Add item</button>
+      <p class="card-text">"Don't save what is left after spending; spend what is left after saving." - Warren Buffett</p>
+    </div>
+  </div> 
+
+
+  <div class="card container my-3" id="dispCard" style="display: none;">
+    <div class="card-header">
+      Your Budgeted Items
+    </div>
+    <div class="card-body">
+      <blockquote class="blockquote mb-0">
+        <p id="itemsDisp"></p>
+      </blockquote>
+    </div>
+  </div>
+
+
+  <button class="btn btn-success" id="refreshButton" onclick="refreshButton()">Back To Home</button>
+ 
+
+
+<!-- Welcome Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">What is Your Total Budget</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <input type="number" class="form-control my-3" placeholder="Enter Amount Here..." id="budgetAmount">
+        "A penny saved is a penny earned." - Benjamin Franklin
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-success" data-bs-dismiss="modal" onclick="saveBudget()">Save Budget</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
